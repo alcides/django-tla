@@ -1,0 +1,13 @@
+{% load cache %}
+
+{% cache 21600 tla %}
+<ul id="tla">
+{% ifnotequal links 0 %}
+    {% for link in links %}
+    <li>{{ before_link }} <a href="{{ link_url }}">{{ link_text }}</a> {{ after_link }}</li>
+    {% endfor %}
+{% else %}
+    <li>Advertise here!</li>
+{% endifequal %}
+</ul>
+{% endcache %}
